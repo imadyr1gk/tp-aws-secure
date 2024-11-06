@@ -1,5 +1,5 @@
-resource "aws_security_group" "imad_sg" {
-  vpc_id = aws_vpc.imad_vpc.id
+resource "aws_security_group" "group5-src1_sg" {
+  vpc_id = aws_vpc.group5-src1_vpc.id
 
   ingress {
     from_port   = 22
@@ -30,7 +30,7 @@ resource "aws_security_group" "imad_sg" {
   }
 
   tags = {
-    Name = "imad_sg"
+    Name = "group5-src1_sg"
   }
 }
 
