@@ -1,7 +1,4 @@
-resource "aws_cloudwatch_log_group" "group5_src1" {
-  name = "group5_src1"
-
-  tags = {
-    Name = "group5_src1"
-  }
+resource "aws_cloudwatch_log_group" "cloudwatch_logs_group" {
+  name              = "cloud-watch-logs-group5-src1"
+  retention_in_days = 14
 }
