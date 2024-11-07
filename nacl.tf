@@ -23,3 +23,10 @@ resource "aws_network_acl" "groupe5-src1-nacl" {
     Name = "groupe5-src1-nacl"
   }
 }
+
+#Nacl Association
+
+resource "aws_network_acl_association" "main" {
+  network_acl_id = aws_network_acl.groupe5-src1-nacl.id
+  subnet_id      = aws_subnet.subnet_pub1.id
+}
