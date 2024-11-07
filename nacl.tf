@@ -22,4 +22,6 @@ resource "aws_network_acl" "groupe5-src1-nacl" {
   tags = {
     Name = "groupe5-src1-nacl"
   }
+  depends_on = [aws_subnet.subnet_pub1]
+
 }

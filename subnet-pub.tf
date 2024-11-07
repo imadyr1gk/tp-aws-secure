@@ -6,5 +6,6 @@ resource "aws_subnet" "subnet_pub1" {
   tags = {
     Name = "group5-src1_src1_subnet_pub1"
   }
+  depends_on = [aws_vpc.group5-src1_vpc]
 }
 

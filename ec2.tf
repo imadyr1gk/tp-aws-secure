@@ -7,4 +7,5 @@ resource "aws_instance" "web" {
   tags = {
     Name = "group5-EC2"
   }
+  depends_on = [aws_vpc.group5-src1_vpc]
 }

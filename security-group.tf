@@ -32,5 +32,6 @@ resource "aws_security_group" "group5-src1_sg" {
   tags = {
     Name = "group5-src1_sg"
   }
+  depends_on = [aws_subnet.subnet_pub1]
 }
 
