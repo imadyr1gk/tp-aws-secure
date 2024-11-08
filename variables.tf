@@ -19,4 +19,9 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
+variable "grp5_src1_s3" {
+  description = "grp5_src1_s3"
+  type        = string
+}
+
 
