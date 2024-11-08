@@ -25,3 +25,10 @@ resource "aws_network_acl" "groupe5-src1-nacl" {
   depends_on = [aws_subnet.subnet_pub1]
 
 }
+
+#Nacl Association
+
+resource "aws_network_acl_association" "main" {
+  network_acl_id = aws_network_acl.groupe5-src1-nacl.id
+  subnet_id      = aws_subnet.subnet_pub1.id
+}
