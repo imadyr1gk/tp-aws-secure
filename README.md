@@ -1,9 +1,8 @@
 # tp-aws-secure
 # tp-aws-secure
 
-########################################################
-   Creating AWS VPC Flow Logs and Generating Traffic   
-########################################################
+Creating AWS VPC Flow Logs and Generating Traffic   
+
 
 1. Sign into the AWS Management Console
 2. Create CloudWatch Logs.
