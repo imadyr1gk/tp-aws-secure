@@ -5,7 +5,7 @@ resource "aws_network_acl" "groupe5-src1-nacl" {
     protocol   = "tcp"
     rule_no    = 200
     action     = "allow"
-    cidr_block = "10.1.0.0/16"
+    cidr_block = var.vpc_cidr
     from_port  = 443
     to_port    = 443
   }
@@ -14,16 +14,33 @@ resource "aws_network_acl" "groupe5-src1-nacl" {
     protocol   = "tcp"
     rule_no    = 100
     action     = "allow"
-    cidr_block = "10.1.0.0/16"
+    cidr_block = var.vpc_cidr
     from_port  = 80
     to_port    = 80
+  }
+
+
+  egress {
+    protocol   = "tcp"
+    rule_no    = 250
+    action     = "allow"
+    cidr_block = var.vpc_cidr
+    from_port  = 22
+    to_port    = 22
+  }
+
+  ingress {
+    protocol   = "tcp"
+    rule_no    = 150
+    action     = "allow"
+    cidr_block = var.vpc_cidr
+    from_port  = 22
+    to_port    = 22
   }
 
   tags = {
     Name = "groupe5-src1-nacl"
   }
-  depends_on = [aws_subnet.subnet_pub1]
-
 }
 
 #Nacl Association

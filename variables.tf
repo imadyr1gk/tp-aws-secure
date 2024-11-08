@@ -19,9 +19,40 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-variable "grp5_src1_s3" {
-  description = "grp5_src1_s3"
-  type        = string
+
+variable "internet_cidr" {
+  description = "CIDR block for internet out"
+  default     = "0.0.0.0/0"
 }
 
+variable "cloudwatch_log_retention_days" {
+  description = "logs retention days"
+  default     = 14
+}
 
+variable "cloudwatch_log_group_name" {
+  description = "cloudwatch log group name"
+  default     = "cloud-watch-logs-group5-src1"
+}
+
+variable "flow_log_traffic_type" {
+  default = "ALL"
+}
+
+variable "vpc_id" {
+  description = "ID du VPC"
+  type        = string
+  #  default     = "aws_vpc.group5-src1_vpc.id"
+}
+
+variable "vpc_name" {
+  description = "Nom du VPC"
+  type        = string
+  default     = "group5-src1-vpc"
+}
+
+variable "s3_bucket_name" {
+  description = "Nom du bucket S3"
+  type        = string
+  default     = "grp5-src1-s3"
+}

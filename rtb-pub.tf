@@ -4,13 +4,14 @@ resource "aws_route_table" "group5-src1-rtb-pub" {
   vpc_id = aws_vpc.group5-src1_vpc.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block = var.internet_cidr
     gateway_id = aws_internet_gateway.group5-src1-igw.id
   }
 
   tags = {
     Name = "group5-src1-rtb-pub"
   }
+  depends_on = [aws_vpc.group5-src1_vpc, aws_internet_gateway.group5-src1-igw]
 }
 
 #route table association
