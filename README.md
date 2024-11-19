@@ -1,5 +1,4 @@
-# tp-aws-secure
-# tp-aws-secure
+# aws-secure
 
 Creating AWS VPC Flow Logs and Generating Traffic   
 
